@@ -56,6 +56,32 @@ order by age_range
 -- Question 4
 -- ========================================================================
 
+with age_plus_deliveries as (
+select d.id,
+sm.total_deliveries_count,
+sm.total_mpi,
+DATEDIFF (year, d.birthday, GETDATE()) as age,
+case when DATEDIFF(year, birthday, GETDATE()) < 20 then '0-20'
+when DATEDIFF(year, d.birthday, GETDATE()) between 20 and 30 then '20-30'
+when DATEDIFF(year, d.birthday, GETDATE()) between 30 and 40 then '30-40'
+when DATEDIFF(year, d.birthday, GETDATE()) between 40 and 50 then '40-50'
+when DATEDIFF(year, d.birthday, GETDATE()) between 50 and 60 then '50-60'
+when DATEDIFF(year, d.birthday, GETDATE()) > 60 then '60+' end as age_range
+from drivers d
+left join shopper_metrics sm 
+on d.id = sm.shopper_id
+where active = true
+and birthday is not null 
+) 
+
+
+
+SELECT avg(total_deliveries_count) as average_deliveries,
+avg(total_mpi) as average_mpi, 
+age_range
+FROM age_plus_deliveries
+group by age_range
+order by avg(total_mpi) desc 
 -- ========================================================================
 -- Question 5
 
