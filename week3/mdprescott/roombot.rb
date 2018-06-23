@@ -8,7 +8,6 @@ receipt_request = ""
 total_cost = ""
 @price_array = []
 spec_mult = 0
-rooms_special = []
 @bathroom_price = 10
 @bedroom_price = 15
 @kitchen_price = 20
@@ -222,10 +221,8 @@ def body
   puts "***I've disposed of the body... ಠ_ಠ***"
 end
 
-def clean_house(rooms_special)
-  specials = [@special] *@rooms.length
-  rooms_special = @rooms.zip(specials)
-  rooms_special.each do |(room, special)|
+def clean_house
+  @rooms.each do |(room)|
   clean_room(room)
   end
 end
