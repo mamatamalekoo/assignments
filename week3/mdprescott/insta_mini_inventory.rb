@@ -14,8 +14,8 @@ end
 def add_warehouse
   print "\nWhat is the warehouse name? "
   name = gets.chomp.to_s
-  warehouse_name = {:name => name, :items => []} #adds warehouse_name hash to warehouse array, inventory file lives in the warehouse name_hash
-  @warehouses.push(warehouse_name)
+  new_warehouse = {name: name, items: []} #adds new_warehouse hash to warehouse array, inventory file lives in the warehouse name_hash
+  @warehouses << (new_warehouse)
   sleep(1)
   puts "\nOkay, now that we know the warehouse. Lets add some items!\n"
   puts "=" *60
@@ -60,8 +60,8 @@ def add_warehouse_items
       end
       break if price > 0
     end
-  warehouse_items = {:item => item, :price => price}
-  @warehouses[@warehouses.length - 1][:items].push(warehouse_items) #warehouses length calculation creats correct index for array
+  warehouse_items = { item: item, price: price}
+  @warehouses[@warehouses.length - 1][:items] << (warehouse_items) #warehouses length calculation creats correct index for array
   print "Added!"
   print "\n\nWould you like to add another item? (Y/N) "
     response_awi = gets.chomp.downcase.to_s
