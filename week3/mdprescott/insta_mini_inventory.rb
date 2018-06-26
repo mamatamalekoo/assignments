@@ -86,7 +86,7 @@ def display_stores
     loop do
       puts "\tStore Name: #{@warehouses[@warehouses.length - (@warehouses.length - variable)][:name]}\n" #warehouses length calculation added to pull from correct array position
       @warehouses[@warehouses.length - (@warehouses.length - variable)][:items].each do |item|  # warehouses length calculation identifies the correct has in the array, .each do pulls individual items and prices from hash
-        puts "\t\tItem: #{item[:item]}\t\tPrice: $#{item[:price]}\n"
+        puts "\t\tItem: #{item[:item]}\t\tPrice: $" + sprintf("%0.2f", item[:price]) +"\n"
       end
       variable += 1
       break if variable == @warehouses.length
