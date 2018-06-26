@@ -307,14 +307,14 @@ def print_receipt(receipt_request, total_cost)
   end
 end
 
-def run_it(room, response, receipt_request, rooms_special, total_cost)
+def run_it(room, response, receipt_request, total_cost)
   intro
   room_ask(room, response)
   ask_special
   watch_it_go
-  clean_house(rooms_special)
+  clean_house
   wrap_up
   print_receipt(receipt_request, total_cost)
 end
 
-run_it(room, response, receipt_request, rooms_special, total_cost)
+run_it(room, response, receipt_request, total_cost)
