@@ -1,0 +1,23 @@
+---
+- !ruby/object:Shopper
+  phone_numbers:
+  - !ruby/object:PhoneNumber
+    id: 1
+    label: Cell
+    number: '5552123456'
+  addresses:
+  - !ruby/object:Address
+    id: 1
+    name: Home
+    street_1: 123 Speedy Way
+    street_2: C
+    city: San Francisco
+    state: CA
+    postal_code: '94050'
+  phone_number_id_array:
+  - 1
+  address_id_array:
+  - 1
+  id: 1
+  first_name: Joe
+  last_name: Schmo

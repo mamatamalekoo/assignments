@@ -1,0 +1,53 @@
+---
+- !ruby/object:NewWarehouse
+  items:
+  - !ruby/object:Item
+    id: 1
+    name: Apple
+    price: 1.49
+    type: each
+  - !ruby/object:Item
+    id: 2
+    name: Pear
+    price: 2.59
+    type: each
+  - !ruby/object:Item
+    id: 3
+    name: Bananas
+    price: 0.99
+    type: looseweight
+  item_id_array:
+  - 1
+  - 1
+  - 2
+  - 1
+  - 2
+  - 3
+  id: 1
+  name: Whole Foods
+- !ruby/object:NewWarehouse
+  items:
+  - !ruby/object:Item
+    id: 1
+    name: Milk
+    price: 2.19
+    type: each
+  - !ruby/object:Item
+    id: 2
+    name: Eggs
+    price: 3.99
+    type: each
+  - !ruby/object:Item
+    id: 3
+    name: Cheese
+    price: 12.99
+    type: looseweight
+  item_id_array:
+  - 1
+  - 1
+  - 2
+  - 1
+  - 2
+  - 3
+  id: 2
+  name: Trader Joes

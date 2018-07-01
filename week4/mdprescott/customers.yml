@@ -1,0 +1,45 @@
+---
+- !ruby/object:Customer
+  phone_numbers:
+  - !ruby/object:PhoneNumber
+    id: 1
+    label: Cell
+    number: '6509064694'
+  addresses:
+  - !ruby/object:Address
+    id: 1
+    name: Home
+    street_1: 123 Fake St
+    street_2: B
+    city: Oakland
+    state: CA
+    postal_code: '94609'
+  phone_number_id_array:
+  - 1
+  address_id_array:
+  - 1
+  id: 1
+  first_name: Michael
+  last_name: Prescott
+  middle_name: David
+- !ruby/object:Customer
+  phone_numbers:
+  - !ruby/object:PhoneNumber
+    id: 1
+    label: Home
+    number: '6502846095'
+  addresses:
+  - !ruby/object:Address
+    id: 1
+    name: Home
+    street_1: 27855 Window Lane
+    city: Los Alamos
+    state: CA
+    postal_code: '94102'
+  phone_number_id_array:
+  - 1
+  address_id_array:
+  - 1
+  id: 2
+  first_name: Marsha
+  last_name: Duro
