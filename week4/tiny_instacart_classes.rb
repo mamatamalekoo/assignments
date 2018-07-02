@@ -145,6 +145,7 @@ def order
     @orders.push(Orders.new(cart))
 end
 
+
 register()
 order()
 total = 0
